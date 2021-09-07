@@ -1,0 +1,61 @@
+body {
+    background-color: aquamarine;
+
+}
+.flex-div {
+    transform: rotate(180deg);
+    background-color: #103e61;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+/* #hello{
+    transform: rotate(180deg);
+    width: 18px;
+    background-color: yellowgreen;
+    margin-left: 450px;
+    padding: 20px;
+    float: right;
+} */
+
+.navBar {
+    /* display: inline-block; */
+    width: 100%;
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    /* text-align: center; */
+   
+    /* display: inline-block; */
+    overflow: hidden;
+    background-color: coral;
+}
+li {
+    display: inline-block;
+    /* float: left; */
+    text-align: center;
+    padding: 12px 10px;
+    text-decoration: none;
+}
+
+li:hover {
+    background-color:peru;
+}
+.button-class {
+    width: 100%;
+    text-align: center;
+    background-color: darkslategrey;
+}
+button{
+    background-color: darkkhaki;
+    /* border: none; */
+    /* background: transparent; */
+}
+
+/* .box {
+    weight: 100px;
+    height: 20px;
+    background: #ff0000;
+} */
