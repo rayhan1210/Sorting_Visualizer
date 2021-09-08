@@ -6,21 +6,24 @@
 </head>
 
 <body id="main">
-   <nav >
-        <div class="navBar"><ul>
-            <li>TBD</li>
-            <li>TBD</li>
-            <li>TBD</li>
-        </ul></div>
-    </nav>
+   <!-- <nav > -->
+        <div class="navBar">
+            <ul>
+                <li><a id="bubbleSort" href="#">Bubble Sort</a></li>
+                <li><a href="">Sort 2</a></li>
+                <li><a href="">Sort 3</a></li>
+            </ul>
+        </div>
+    <!-- </nav> -->
     <!-- <div class="star1"></div><div class="star2"></div><div class="star3"></div> -->
     <div id="box" class="flex-div"></div>
     <div class="button-class" >
-        <button type="button" onclick="createMoreBars()">Reset</button>
-        <!-- <button type="button" onclick="clearDivs()">Clear</button> -->
+        <button type="button" id="createMoreBars">Reset</button>
+        <!-- <button type="button" id="bubbleSort">Bubble Sort</button> -->
+        <input type="range" min="10" max="50" id="slider" value="10">
     </div>
+ 
+    <script src="index.js"></script>  
+    <script src="bubbleSorting.js"></script>
 </body>
-
-
-<script src="index.js"></script>  
 </html>

@@ -1,32 +1,46 @@
+// export { bubbleSorting } from './bubbleSorting';
 
-
-// function showText(){
-//     document.getElementById("box").style.width= 180+"px";
-//     document.getElementById("box").style.height = 140+"px";
-//     document.getElementById("box").style.background = "#ff0000";
-// }
-
-// showText();
 const bar = [];
-createMoreBars();
+let randNums = [];
+let arraySize = document.querySelector("#slider").value;
 
-function createMoreBars(arraySize = 10){
-    clearDivs();
-    let randNums = [];
-    for(let i = 0; i < arraySize; i++){
+createMoreBars(arraySize);
+document.querySelector("#createMoreBars").addEventListener("click", () => {
+    createMoreBars(arraySize = 10);
+    document.querySelector("#slider").value = 10;
+});
+document.querySelector("#slider").addEventListener("input", function(){
+    arraySize = document.querySelector("#slider").value;
+    createMoreBars(arraySize);
+})
+
+
+
+//functions
+function randomNumGenerator(val){
+    randNums = [];
+    for(let i = 0; i < val; i++){
         randNums.push((Math.random()*100) + 50);
     }
+    // console.log("Here: " + randNums);
+}
+function checkRand(){
+    console.log("randums: " + randNums);
+}
+function createMoreBars(arraySize){
+    clearDivs();
+    randomNumGenerator(arraySize);
     for(let i = 0; i < arraySize; i++){
         bar[i] = document.createElement("div");
         bar[i].setAttribute("id", "bars");
         bar[i].style.width = "50px";
         let barHeight = randNums[i]*2;
         bar[i].style.height = `${barHeight}px`;
-        console.log(barHeight);
+        console.log("for loop Here: " + barHeight);
         colorPicker(bar, i);
-        //Ok
         document.getElementById("box").appendChild(bar[i]);
     }
+    // console.log("randums: " + randNums);
 }
 
 function clearDivs() {

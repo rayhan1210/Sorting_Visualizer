@@ -1,8 +1,8 @@
 body {
     background-color: aquamarine;
-
 }
 .flex-div {
+    height: 350px;
     transform: rotate(180deg);
     background-color: #103e61;
     display: flex;
@@ -10,14 +10,6 @@ body {
     justify-content: center;
 
 }
-/* #hello{
-    transform: rotate(180deg);
-    width: 18px;
-    background-color: yellowgreen;
-    margin-left: 450px;
-    padding: 20px;
-    float: right;
-} */
 
 .navBar {
     /* display: inline-block; */
@@ -26,17 +18,17 @@ body {
 }
 ul {
     list-style-type: none;
-    /* text-align: center; */
-   
-    /* display: inline-block; */
     overflow: hidden;
     background-color: coral;
 }
+a {
+    display: inline-block;
+    color: aliceblue;
+    padding: 10px 16px;
+    text-decoration: none;
+}
 li {
     display: inline-block;
-    /* float: left; */
-    text-align: center;
-    padding: 12px 10px;
     text-decoration: none;
 }
 
@@ -53,9 +45,3 @@ button{
     /* border: none; */
     /* background: transparent; */
 }
-
-/* .box {
-    weight: 100px;
-    height: 20px;
-    background: #ff0000;
-} */
