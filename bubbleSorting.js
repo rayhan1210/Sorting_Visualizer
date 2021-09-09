@@ -1,39 +1,26 @@
-let barHeight = [5, 3, 4, 7, 9, 11, 20, 21, 12, 15];
 
-function bubbleSorting(){
+
+async function bubbleSorting(){
     let value = [];
-    let holder = [];
     value = document.querySelectorAll("#bars");
-    // console.log(value.length);
     for(let i = 0; i < value.length; i++){
-        holder[i] = parseInt(value[i].style.height);
-    }
-    for(let i = 0; i < holder.length-1; i++){
-        let swapped = false
-        for(let j = 0; j < holder.length-i-1; j++){
-            // console.log(barHeight[j]);
-            if(holder[j] > holder[j+1]){
-                // console.log("here");
-                let temp = holder[j];
-                holder[j] = holder[j+1];
-                holder[j+1] = temp;
-                swapped = true;
+        for(let j = 0; j < value.length-i-1; j++){
+            // the current two element that are being swapped.
+            value[j].style.background = "#6251a8";
+            value[j+1].style.background = "#6251a8";
+            if(value[j].style.height > value[j+1].style.height){   
+                await waitTimer(50); // adds a delay for each swap.
+                elementSwapper(value[j], value[j+1]);
             }
-        } 
-        if(swapped == false){
-            break;
+            // the two element that swapped
+            value[j].style.background = "#ab6503";
+            value[j+1].style.background = "#ab6503";
         }
+        // the highest one color gets changed
+        value[value.length-1-i].style.background = "#1f7056";
     }
-    // console.log(holder.length);
-    for(let j = 0; j < holder.length; j++){
-        console.log(holder[j]);
-    }
-    
 }
 
-document.querySelector("#bubbleSort").addEventListener("click", function(){
-    bubbleSorting();
-    // for(let k = 0; k < barHeight.length; k++){
-    //     console.log(barHeight[k]);
-    // }
+document.querySelector("#bubbleSort").addEventListener("click", async function(){
+    await bubbleSorting();
 });
