@@ -36,16 +36,15 @@ function randomNumGenerator(val){
         randNums.push((Math.random()*100) + 50);
     }
 }
-function checkRand(){
-    console.log("randums: " + randNums);
-}
+
 function createMoreBars(arraySize){
+    document.querySelector(".ResetItem").style.display = "none";
     clearDivs();
     randomNumGenerator(arraySize);
     for(let i = 0; i < arraySize; i++){
         bar[i] = document.createElement("div");
         bar[i].setAttribute("id", "bars");
-        bar[i].style.width = "20px";
+        bar[i].style.width = "10px";
         bar[i].style.margin = "1.5px";
         let barHeight = randNums[i]*2;
         bar[i].style.height = `${barHeight}px`;
@@ -64,4 +63,14 @@ function colorPicker(bar, len){
     for(let i = 0; i < bar.length; i += 2){
         bar[i].style.background = "#abb802";
     }
+}
+function checkSorted(value){
+    let sorted = true;
+    for(let i =0; i < value.length-1; i++){
+        if(value[i].style.height > value[i+1].style.height){
+            sorted = false;
+            break;
+        }
+    }
+    return sorted;
 }

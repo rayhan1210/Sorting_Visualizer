@@ -3,7 +3,7 @@ body {
 }
 .flex-div {
     height: 350px;
-    transform: rotate(180deg);
+    transform: rotateX(180deg);
     background-color: #103e61;
     display: flex;
     flex-direction: row;
@@ -44,4 +44,7 @@ button{
     background-color: darkkhaki;
     /* border: none; */
     /* background: transparent; */
+}
+.ResetItem {
+    color: darksalmon;
 }

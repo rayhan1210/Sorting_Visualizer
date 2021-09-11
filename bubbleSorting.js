@@ -1,8 +1,8 @@
 
 
-async function bubbleSorting(){
-    let value = [];
-    value = document.querySelectorAll("#bars");
+async function bubbleSorting(value){
+    // let value = [];
+    // value = document.querySelectorAll("#bars");
     for(let i = 0; i < value.length; i++){
         for(let j = 0; j < value.length-i-1; j++){
             // the current two element that are being swapped.
@@ -21,6 +21,14 @@ async function bubbleSorting(){
     }
 }
 
-document.querySelector("#bubbleSort").addEventListener("click", async function(){
-    await bubbleSorting();
+document.querySelector("#bubbleSort").addEventListener("click", async () => {
+
+    let val =  document.querySelectorAll("#bars");
+    // console.log(val[0].style.height);
+    if(checkSorted(val) === true){
+        document.querySelector(".ResetItem").style.display = "inline-block";
+    }else{
+        await bubbleSorting(val);
+    }
+    
 });
