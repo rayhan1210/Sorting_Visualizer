@@ -1,6 +1,6 @@
 /**
  * Algortihm:
- * 
+ * good for large dataset and average & worst case complexity => O(n^2), best case is O(nlogn)
  * 
  * 
  * Some Notes:
@@ -21,7 +21,7 @@ async function quickSort(val, left, right){
         let partition = await partitioner(left, right, val); // wait for the partition to happen
         await quickSort(val, left, partition-1); //await the left side of quickSort
         await quickSort(val, partition+1, right); //await the right side of quicksort
-        val[right].style.background = "#04A3E3"; // after computation done change it to same color as rest
+        val[right].style.background = "#38C9C9"; // after computation done change it to same color as rest
     }
 }
 
@@ -51,14 +51,16 @@ let partitioner = async (left, right, val) => {
         }
     }
     await waitTimer(50);
+    // val[pointLeft].style.background = "#38CA9A";
+    // val[right].style.background="#C938A5";
     elementSwapper(val[pointLeft], val[right]);
     changeSwappedElementColor(val, pointLeft, pointRight);
     return pointLeft; 
 }
 
 function changeSwappedElementColor(val, i, j){
-    val[i].style.background = "#04A3E3";
-    val[j].style.background="#04A3E3";
+    val[i].style.background = "#38C9C9";
+    val[j].style.background = "#38C9C9";
 }
 
 document.querySelector("#quicksort").addEventListener("click", async () => {

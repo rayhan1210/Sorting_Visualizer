@@ -1,4 +1,6 @@
-
+/** 
+ * Bad for large dataset and avaerage and worst case complesxity => O(n^2)
+ */
 
 async function bubbleSorting(value){
     // let value = [];
