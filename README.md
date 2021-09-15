@@ -10,4 +10,4 @@
 - Merge Sort
 
 
-(Link to the website)(https://rayhan1210.github.io/Sorting_Visualizer/)
+[Website Link](https://rayhan1210.github.io/Sorting_Visualizer/)
