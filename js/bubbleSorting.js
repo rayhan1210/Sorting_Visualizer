@@ -11,18 +11,18 @@ async function bubbleSorting(value){
     for(let i = 0; i < value.length; i++){
         for(let j = 0; j < value.length-i-1; j++){
             // the current two element that are being swapped.
-            value[j].style.background = "#6251a8";
-            value[j+1].style.background = "#6251a8";
+            value[j].style.background = "rgb(255, 220, 123)";
+            value[j+1].style.background = "rgb(255, 220, 123)";
             if(value[j].style.height > value[j+1].style.height){   
                 await waitTimer(delay); // adds a delay for each swap.
                 elementSwapper(value[j], value[j+1]);
             }
             // the two element that swapped
-            value[j].style.background = "#ab6503";
-            value[j+1].style.background = "#ab6503";
+            value[j].style.background = "rgb(255, 119, 119)";
+            value[j+1].style.background = "rgb(255, 119, 119)";
         }
         // the highest one color gets changed
-        value[value.length-1-i].style.background = "#1f7056";
+        value[value.length-1-i].style.background = "rgb(200, 86, 253)";
     }
 }
 

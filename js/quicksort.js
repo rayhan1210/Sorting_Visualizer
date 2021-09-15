@@ -30,7 +30,7 @@ let partitioner = async (left, right, val) => {
     let pointRight = right-1; //excluding the pivot value
     let pivot = right;
     let pivotEle = val[right].style.height;
-    val[pivot].style.background = "blue"; // use it to track the pivot element
+    val[pivot].style.background = "rgb(255, 220, 123)"; // use it to track the pivot element
     while(true){
         while(val[pointLeft].style.height < pivotEle){
             pointLeft++;
@@ -40,8 +40,8 @@ let partitioner = async (left, right, val) => {
             //which would try access element outside indexBound that does not exist
             pointRight--;
         }
-        val[pointLeft].style.background = "red";
-        val[pointRight].style.background="green";
+        val[pointLeft].style.background = "rgb(255, 119, 119)";
+        val[pointRight].style.background="rgb(200, 86, 253)";
         if(pointLeft >= pointRight){
             break;
         }else{
