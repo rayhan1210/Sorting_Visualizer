@@ -105,13 +105,13 @@ function updateGreetings(element){
     let today = new Date();
     let time = today.getHours()+""+ today.getMinutes(); //+":"+today.getSeconds();
     let timeofday = time;
-    if(time < 1200){
+    if(timeofday < 1200){
         element.innerHTML = "GOOD MORNING!!!"
         element.style.visibility = 'visible';
-    }else if(time > 1200 && time < 1800){
+    }else if(timeofday > 1200 && timeofday < 1800){
         element.innerHTML = "GOOD AFTERNOON!!!"
         element.style.visibility = 'visible';
-    }else if(time > 1700 && time < 1900){
+    }else if(timeofday > 1700 && timeofday < 1900){
         element.innerHTML = "GOOD EVENING!!!"
         element.style.visibility = 'visible';
     }else{
