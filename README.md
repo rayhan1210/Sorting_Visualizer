@@ -11,3 +11,4 @@
 
 [Website Link](https://rayhan1210.github.io/Sorting_Visualizer/)
 <img src="image/insertion.png"><br/>
+<img src="image/merge.png"><br/>
