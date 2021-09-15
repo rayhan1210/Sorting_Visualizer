@@ -1,8 +1,9 @@
 const bar = [];
 let randNums = [];
 let arraySize = document.querySelector("#size").value;
-let delay = document.querySelector("#animationspeed").value;
+let delay = 350;//document.querySelector("#animationspeed").value;
 let maxDelay = document.querySelector("#animationspeed").max;
+console.log(document.querySelector("#animationspeed").value);
 let element = document.querySelector(".letter1");
 createMoreBars(arraySize);
 updateGreetings(element);
@@ -16,6 +17,7 @@ document.querySelector("#size").addEventListener("input", function(){
 });
 document.querySelector("#animationspeed").addEventListener('input', () => {
     delay = maxDelay - document.querySelector("#animationspeed").value;
+    // console.log("delay: " + delay);
 });
 //swap the divs around
 function elementSwapper(element1, element2){

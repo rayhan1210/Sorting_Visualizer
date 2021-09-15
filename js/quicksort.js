@@ -65,6 +65,7 @@ function changeSwappedElementColor(val, i, j){
 
 document.querySelector("#quicksort").addEventListener("click", async () => {
     let val =  document.querySelectorAll("#bars");
+    // console.log("Delay: " + delay);
     if(checkSorted(val) === true){
         document.querySelector(".add-warning").innerHTML = "Reset the element";
         // document.querySelector(".wrapper").classList.add("bg-warning");

@@ -75,7 +75,7 @@ async function merge(array, left, mid, right){
 
 document.querySelector('#mergesort').addEventListener('click', async () => {
     let value = document.querySelectorAll("#bars");//[2, 5, 1, 22, 15, 17, 21];
-    // console.log("OK");
+    // console.log("delay: " + delay);
     if(checkSorted(value) === true){
         document.querySelector(".add-warning").innerHTML = "Reset the element";
         // document.querySelector(".wrapper").classList.add("bg-warning");
