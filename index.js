@@ -38,7 +38,7 @@ function randomNumGenerator(val){
 }
 
 function createMoreBars(arraySize){
-    document.querySelector(".ResetItem").style.display = "none";
+    // document.querySelector(".ResetItem").style.display = "none";
     clearDivs();
     randomNumGenerator(arraySize);
     for(let i = 0; i < arraySize; i++){

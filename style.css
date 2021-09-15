@@ -1,10 +1,10 @@
 body {
-    background-color: aquamarine;
+    background-color: #192A36;
 }
 .flex-div {
     height: 350px;
     transform: rotateX(180deg);
-    background-color: #103e61;
+    background-color: #192A36;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -37,14 +37,41 @@ li:hover {
 }
 .button-class {
     width: 100%;
-    text-align: center;
-    background-color: darkslategrey;
+    padding-left: 30%;
+    /* height: 70pxpx; */
+    /* display: inline-flex; */
+    /* text-align: center; */
+    background-color: rgb(1, 18, 29);
 }
-button{
-    background-color: darkkhaki;
-    /* border: none; */
-    /* background: transparent; */
-}
+
 .ResetItem {
     color: darksalmon;
 }
+
+.row{
+    display: inline-flex;
+    /* padding: 10px; */
+    /* justify-content: center; */
+    align-items: center;
+    
+}
+
+#input{
+    display: flex;
+    padding: 10px;
+    color: black;
+    justify-content: space-around;
+}
+.size {
+    margin-left: 65px;
+}
+.speed {
+    margin-left: 5px;
+}
+/* #size {
+    margin: 10px;
+} */
+/*
+#speed {
+    margin-left: 10px;
+}  */
