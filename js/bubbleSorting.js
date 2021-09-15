@@ -1,11 +1,13 @@
 /** 
  * Algorithm: 
- * Bad for large dataset and avaerage and worst case complesxity => O(n^2)
+ * Bad for large dataset and avaerage and worst case complesxity => O(n^2).
+ * 
+ * Note:
+ * The bubble sort algorithm can be optimized by checking if any swapped performed or not
+ * and if no swap performed then stop the algorithm in inner loop where swapping is performed
  */
 
 async function bubbleSorting(value){
-    // let value = [];
-    // value = document.querySelectorAll("#bars");
     for(let i = 0; i < value.length; i++){
         for(let j = 0; j < value.length-i-1; j++){
             // the current two element that are being swapped.
@@ -25,12 +27,11 @@ async function bubbleSorting(value){
 }
 
 document.querySelector("#bubbleSort").addEventListener("click", async () => {
-
     let val =  document.querySelectorAll("#bars");
     // console.log(val[0].style.height);
     if(checkSorted(val) === true){
         document.querySelector(".add-warning").innerHTML = "Reset the element";
-        document.querySelector(".wrapper").classList.add("bg-warning");
+        // document.querySelector(".wrapper").classList.add("bg-warning");
         document.querySelector(".wrapper").style.display = "inline-block";
     }else{
         disableSorting();

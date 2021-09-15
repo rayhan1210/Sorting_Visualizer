@@ -1,14 +1,14 @@
-// export { bubbleSorting } from './bubbleSorting';
-
 const bar = [];
 let randNums = [];
 let arraySize = document.querySelector("#size").value;
 let delay = document.querySelector("#animationspeed").value;
 let maxDelay = document.querySelector("#animationspeed").max;
+let element = document.querySelector(".letter1");
 createMoreBars(arraySize);
+updateGreetings(element);
 document.querySelector("#createMoreBars").addEventListener("click", () => {
-    createMoreBars(arraySize = 10);
-    document.querySelector("#size").value = 10;
+    createMoreBars(arraySize);
+    // document.querySelector("#size").value = 10;
 });
 document.querySelector("#size").addEventListener("input", function(){
     arraySize = document.querySelector("#size").value;
@@ -17,7 +17,7 @@ document.querySelector("#size").addEventListener("input", function(){
 document.querySelector("#animationspeed").addEventListener('input', () => {
     delay = maxDelay - document.querySelector("#animationspeed").value;
 });
-
+//swap the divs around
 function elementSwapper(element1, element2){
     let temp = element1.style.height;
     element1.style.height = element2.style.height;
@@ -40,10 +40,10 @@ function randomNumGenerator(val){
         randNums.push((Math.random()*100) + 50);
     }
 }
-
+//function for creating more elements (the div)
 function createMoreBars(arraySize){
     document.querySelector(".wrapper").style.display = "none";
-    clearDivs();
+    clearDivs(); //clear out previous elements.
     randomNumGenerator(arraySize);
     for(let i = 0; i < arraySize; i++){
         bar[i] = document.createElement("div");
@@ -63,9 +63,9 @@ function clearDivs() {
 }
 // pick a different color for every 2nd element
 function colorPicker(bar, len){
-    bar[len].style.background = "#0789a6";
+    bar[len].style.background = "#48FBC1";
     for(let i = 0; i < bar.length; i += 2){
-        bar[i].style.background = "#abb802";
+        bar[i].style.background = "#48FBF7";
     }
 }
 function checkSorted(value){
@@ -78,6 +78,7 @@ function checkSorted(value){
     }
     return sorted;
 }
+//Note: arrow function -> fat arrow function -> are anonymous function
 let disableSorting = () => {
     document.querySelector("#bubbleSort").disabled = true;
     document.querySelector("#insertionsort").disabled = true;
@@ -97,4 +98,24 @@ let enableSorting = () => {
     document.querySelector("#insertionsort").disabled = false;
     document.querySelector("#quicksort").disabled = false;
     document.querySelector("#mergesort").disabled = false;
+}
+
+function updateGreetings(element){
+    element.style.visibility = 'hidden';
+    let today = new Date();
+    let time = today.getHours()+""+ today.getMinutes(); //+":"+today.getSeconds();
+    let timeofday = time;
+    if(time < 1200){
+        element.innerHTML = "GOOD MORNING!!!"
+        element.style.visibility = 'visible';
+    }else if(time > 1200 && time < 1800){
+        element.innerHTML = "GOOD AFTERNOON!!!"
+        element.style.visibility = 'visible';
+    }else if(time > 1700 && time < 1900){
+        element.innerHTML = "GOOD EVENING!!!"
+        element.style.visibility = 'visible';
+    }else{
+        element.innerHTML = "GOOD NIGHT!!!"
+        element.style.visibility = 'visible';
+    }
 }

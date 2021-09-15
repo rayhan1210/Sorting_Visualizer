@@ -67,7 +67,7 @@ document.querySelector("#quicksort").addEventListener("click", async () => {
     let val =  document.querySelectorAll("#bars");
     if(checkSorted(val) === true){
         document.querySelector(".add-warning").innerHTML = "Reset the element";
-        document.querySelector(".wrapper").classList.add("bg-warning");
+        // document.querySelector(".wrapper").classList.add("bg-warning");
         document.querySelector(".wrapper").style.display = "inline-block";
     }else{
         disableSorting();
