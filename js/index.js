@@ -2,17 +2,21 @@
 
 const bar = [];
 let randNums = [];
-let arraySize = document.querySelector("#slider").value;
-
+let arraySize = document.querySelector("#size").value;
+let delay = document.querySelector("#animationspeed").value;
+let maxDelay = document.querySelector("#animationspeed").max;
 createMoreBars(arraySize);
 document.querySelector("#createMoreBars").addEventListener("click", () => {
     createMoreBars(arraySize = 10);
-    document.querySelector("#slider").value = 10;
+    document.querySelector("#size").value = 10;
 });
-document.querySelector("#slider").addEventListener("input", function(){
-    arraySize = document.querySelector("#slider").value;
+document.querySelector("#size").addEventListener("input", function(){
+    arraySize = document.querySelector("#size").value;
     createMoreBars(arraySize);
-})
+});
+document.querySelector("#animationspeed").addEventListener('input', () => {
+    delay = maxDelay - document.querySelector("#animationspeed").value;
+});
 
 function elementSwapper(element1, element2){
     let temp = element1.style.height;
@@ -38,7 +42,7 @@ function randomNumGenerator(val){
 }
 
 function createMoreBars(arraySize){
-    // document.querySelector(".ResetItem").style.display = "none";
+    document.querySelector(".wrapper").style.display = "none";
     clearDivs();
     randomNumGenerator(arraySize);
     for(let i = 0; i < arraySize; i++){
@@ -73,4 +77,24 @@ function checkSorted(value){
         }
     }
     return sorted;
+}
+let disableSorting = () => {
+    document.querySelector("#bubbleSort").disabled = true;
+    document.querySelector("#insertionsort").disabled = true;
+    document.querySelector("#quicksort").disabled = true;
+    document.querySelector("#mergesort").disabled = true;
+}
+let disableResetAndSize = () => {
+    document.querySelector("#createMoreBars").disabled = true;
+    document.querySelector("#size").disabled = true;
+}
+let enableResetAndSize = () => {
+    document.querySelector("#createMoreBars").disabled = false;
+    document.querySelector("#size").disabled = false;
+}
+let enableSorting = () => {
+    document.querySelector("#bubbleSort").disabled = false;
+    document.querySelector("#insertionsort").disabled = false;
+    document.querySelector("#quicksort").disabled = false;
+    document.querySelector("#mergesort").disabled = false;
 }

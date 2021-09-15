@@ -12,7 +12,6 @@ async function mergesort(array, left, right){
    }
     
 }
-let delay = 50;
 async function merge(array, left, mid, right){
     let lenLeft = mid-left+1;
     let lenRight = right-mid;
@@ -32,7 +31,6 @@ async function merge(array, left, mid, right){
     let a = 0; 
     let b = 0;
     let k = left;
-    // await waitTimer(50);
     while( a < lenLeft && b < lenRight){
         await waitTimer(delay);
         if(leftArr[a] <= rightArr[b]){
@@ -71,6 +69,15 @@ async function merge(array, left, mid, right){
 document.querySelector('#mergesort').addEventListener('click', async () => {
     let value = document.querySelectorAll("#bars");//[2, 5, 1, 22, 15, 17, 21];
     // console.log("OK");
-    await mergesort(value, 0, value.length-1);
-    // console.log(value);
+    if(checkSorted(value) === true){
+        document.querySelector(".add-warning").innerHTML = "Reset the element";
+        document.querySelector(".wrapper").classList.add("bg-warning");
+        document.querySelector(".wrapper").style.display = "inline-block";
+    }else{
+        disableSorting();
+        disableResetAndSize();
+        await mergesort(value, 0, value.length-1);
+        enableSorting();
+        enableResetAndSize();
+    }
 });

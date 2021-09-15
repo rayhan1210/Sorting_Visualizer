@@ -1,4 +1,5 @@
 /** 
+ * Algorithm: 
  * Bad for large dataset and avaerage and worst case complesxity => O(n^2)
  */
 
@@ -11,7 +12,7 @@ async function bubbleSorting(value){
             value[j].style.background = "#6251a8";
             value[j+1].style.background = "#6251a8";
             if(value[j].style.height > value[j+1].style.height){   
-                await waitTimer(50); // adds a delay for each swap.
+                await waitTimer(delay); // adds a delay for each swap.
                 elementSwapper(value[j], value[j+1]);
             }
             // the two element that swapped
@@ -28,9 +29,15 @@ document.querySelector("#bubbleSort").addEventListener("click", async () => {
     let val =  document.querySelectorAll("#bars");
     // console.log(val[0].style.height);
     if(checkSorted(val) === true){
-        document.querySelector(".ResetItem").style.display = "inline-block";
+        document.querySelector(".add-warning").innerHTML = "Reset the element";
+        document.querySelector(".wrapper").classList.add("bg-warning");
+        document.querySelector(".wrapper").style.display = "inline-block";
     }else{
+        disableSorting();
+        disableResetAndSize();
         await bubbleSorting(val);
+        enableSorting();
+        enableResetAndSize();
     }
     
 });

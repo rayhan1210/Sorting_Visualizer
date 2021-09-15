@@ -45,12 +45,12 @@ let partitioner = async (left, right, val) => {
         if(pointLeft >= pointRight){
             break;
         }else{
-            await waitTimer(50);
+            await waitTimer(delay);
             elementSwapper(val[pointLeft], val[pointRight]);
             changeSwappedElementColor(val, pointLeft, pointRight);
         }
     }
-    await waitTimer(50);
+    await waitTimer(delay);
     // val[pointLeft].style.background = "#38CA9A";
     // val[right].style.background="#C938A5";
     elementSwapper(val[pointLeft], val[right]);
@@ -66,9 +66,15 @@ function changeSwappedElementColor(val, i, j){
 document.querySelector("#quicksort").addEventListener("click", async () => {
     let val =  document.querySelectorAll("#bars");
     if(checkSorted(val) === true){
-        document.querySelector(".ResetItem").style.display = "inline-block";
+        document.querySelector(".add-warning").innerHTML = "Reset the element";
+        document.querySelector(".wrapper").classList.add("bg-warning");
+        document.querySelector(".wrapper").style.display = "inline-block";
     }else{
+        disableSorting();
+        disableResetAndSize();
         await quickSort(val, 0, val.length-1);
+        enableSorting();
+        enableResetAndSize();
     }
     
 });
