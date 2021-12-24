@@ -105,8 +105,8 @@ let enableSorting = () => {
 function updateGreetings(element){
     element.style.visibility = 'hidden';
     let today = new Date();
-    let time = today.getHours()+""+ today.getMinutes(); //+":"+today.getSeconds();
-    let timeofday = time;
+    let time = today.toLocaleTimeString('it-IT', {timezone: "Australia/Sydney"});
+    let timeofday = parseInt(time)*100;
     if(timeofday < 1200){
         element.innerHTML = "GOOD MORNING!!!"
         element.style.visibility = 'visible';
