@@ -103,7 +103,7 @@ let enableSorting = () => {
 }
 
 function updateGreetings(element){
-    element.style.visibility = 'hidden';
+//     element.style.visibility = 'hidden';
 //     let today = new Date();
 //     let time = today.toLocaleTimeString('it-IT', {timezone: "Australia/Sydney"});
 //     let timeofday = parseInt(time)*100;
@@ -117,7 +117,7 @@ function updateGreetings(element){
 //         element.innerHTML = "GOOD EVENING!!!"
 //         element.style.visibility = 'visible';
 //     }else{
-//     element.innerHTML = "HI!!!";
+    element.innerHTML = "HI!!!";
     element.style.visibility = 'visible';
 //     }
 }
