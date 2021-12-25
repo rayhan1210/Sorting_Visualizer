@@ -103,21 +103,21 @@ let enableSorting = () => {
 }
 
 function updateGreetings(element){
-    element.style.visibility = 'hidden';
-    let today = new Date();
-    let time = today.toLocaleTimeString('it-IT', {timezone: "Australia/Sydney"});
-    let timeofday = parseInt(time)*100;
-    if(timeofday < 1200){
-        element.innerHTML = "GOOD MORNING!!!"
-        element.style.visibility = 'visible';
-    }else if(timeofday > 1200 && timeofday < 1800){
-        element.innerHTML = "GOOD AFTERNOON!!!"
-        element.style.visibility = 'visible';
-    }else if(timeofday > 1700 && timeofday < 1900){
-        element.innerHTML = "GOOD EVENING!!!"
-        element.style.visibility = 'visible';
-    }else{
-        element.innerHTML = "GOOD NIGHT!!!"
-        element.style.visibility = 'visible';
-    }
+//     element.style.visibility = 'hidden';
+//     let today = new Date();
+//     let time = today.toLocaleTimeString('it-IT', {timezone: "Australia/Sydney"});
+//     let timeofday = parseInt(time)*100;
+//     if(timeofday < 1200){
+//         element.innerHTML = "GOOD MORNING!!!"
+//         element.style.visibility = 'visible';
+//     }else if(timeofday > 1200 && timeofday < 1800){
+//         element.innerHTML = "GOOD AFTERNOON!!!"
+//         element.style.visibility = 'visible';
+//     }else if(timeofday > 1700 && timeofday < 1900){
+//         element.innerHTML = "GOOD EVENING!!!"
+//         element.style.visibility = 'visible';
+//     }else{
+    element.innerHTML = "HI!!!"
+    element.style.visibility = 'visible';
+//     }
 }
