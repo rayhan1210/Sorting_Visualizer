@@ -117,7 +117,7 @@ function updateGreetings(element){
 //         element.innerHTML = "GOOD EVENING!!!"
 //         element.style.visibility = 'visible';
 //     }else{
-    element.innerHTML = "HI!!!";
+//     element.innerHTML = "HI!!!";
     element.style.visibility = 'visible';
 //     }
 }
