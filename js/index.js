@@ -103,7 +103,7 @@ let enableSorting = () => {
 }
 
 function updateGreetings(element){
-//     element.style.visibility = 'hidden';
+    element.style.visibility = 'hidden';
 //     let today = new Date();
 //     let time = today.toLocaleTimeString('it-IT', {timezone: "Australia/Sydney"});
 //     let timeofday = parseInt(time)*100;
